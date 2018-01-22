@@ -67,7 +67,7 @@ class PaginateRoute
 
         $query = $currentRoute->parameter('pageQuery');
 
-        return (int) str_replace($this->pageKeyword.'/', '', $query) ?: 1;
+        return (int) str_replace($this->pageKeyword, '', $query) ?: 1;
     }
 
     /**
