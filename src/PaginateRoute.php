@@ -43,10 +43,13 @@ class PaginateRoute
         $this->router = $router;
         $this->urlGenerator = $urlGenerator;
 
-        // Unfortunately we can't do this in the service provider since routes are booted first
-        $this->translator->addNamespace('paginateroute', __DIR__.'/../resources/lang');
-
-        $this->pageKeyword = $this->translator->get('paginateroute::paginateroute.page');
+        if (config('paginateroute.simple_path')) {
+            $this->pageKeyword = null;
+        } else {
+            // Unfortunately we can't do this in the service provider since routes are booted first
+            $this->translator->addNamespace('paginateroute', __DIR__.'/../resources/lang');
+            $this->pageKeyword = $this->translator->get('paginateroute::paginateroute.page').'/';
+        }
     }
 
     /**
@@ -328,7 +331,7 @@ class PaginateRoute
             return $url;
         }
 
-        return trim($url, '/')."/{$this->pageKeyword}/{$page}";
+        return trim($url, '/')."/{$this->pageKeyword}{$page}";
     }
 
     /**
@@ -345,7 +348,7 @@ class PaginateRoute
             $router->group(
                 ['middleware' => 'Spatie\PaginateRoute\SetPageMiddleware'],
                 function () use ($pageKeyword, $router, $uri, $action, &$route) {
-                    $route = $router->get($uri.'/{pageQuery?}', $action)->where('pageQuery', $pageKeyword.'/[0-9]+');
+                    $route = $router->get($uri.'/{pageQuery?}', $action)->where('pageQuery', $pageKeyword.'[0-9]+');
                 });
 
             return $route;
