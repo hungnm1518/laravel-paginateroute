@@ -326,12 +326,13 @@ class PaginateRoute
      */
     public function addPageQuery($url, $page, $full = false)
     {
+        $url = trim($url, '/' . config('setting.extension'));
         // If the first page's URL is requested and $full is set to false, there's nothing to be added.
-        if ($page === 1 && ! $full) {
-            return $url;
+        if ($page === 1 && !$full) {
+            return $url . config('setting.extension');
         }
 
-        return trim($url, '/')."/{$this->pageKeyword}{$page}";
+        return $url . "/{$this->pageKeyword}{$page}" . config('setting.extension');
     }
 
     /**
@@ -342,13 +343,14 @@ class PaginateRoute
         $pageKeyword = $this->pageKeyword;
         $router = $this->router;
 
-        $router->macro('paginate', function ($uri, $action) use ($pageKeyword, $router) {
+        $router->macro('paginate', function ($uri, $action, $where) use ($pageKeyword, $router) {
             $route = null;
 
             $router->group(
                 ['middleware' => 'Spatie\PaginateRoute\SetPageMiddleware'],
-                function () use ($pageKeyword, $router, $uri, $action, &$route) {
-                    $route = $router->get($uri.'/{pageQuery?}', $action)->where('pageQuery', $pageKeyword.'[0-9]+');
+                function () use ($pageKeyword, $router, $uri, $action, $where, &$route) {
+                    $route[] = $router->get($uri . config('setting.extension'), $action)->where($where);
+                    $route[] = $router->get($uri . '/{pageQuery?}' . config('setting.extension'), $action)->where('pageQuery', $pageKeyword . '[0-9]+');
                 });
 
             return $route;
