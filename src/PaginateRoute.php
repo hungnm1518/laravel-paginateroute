@@ -326,8 +326,8 @@ class PaginateRoute
      */
     public function addPageQuery($url, $page, $full = false)
     {
-        $url = substr($url, 0, strrpos($url, '.'));
-        $url = rtrim($url, '/');
+        $url = rtrim(substr($url, 0, strrpos($url, '.')), '/');
+
         // If the first page's URL is requested and $full is set to false, there's nothing to be added.
         if ($page === 1 && !$full) {
             return $url . config('setting.extension');
