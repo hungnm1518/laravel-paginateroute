@@ -349,7 +349,7 @@ class PaginateRoute
             $router->group(
                 ['middleware' => 'Spatie\PaginateRoute\SetPageMiddleware'],
                 function () use ($pageKeyword, $router, $uri, $action, $where, &$route) {
-                    $route[] = $router->get($uri . config('setting.extension'), $action)->where($where);
+                    $route[] = $router->get($uri . (($uri !== '/') ? config('setting.extension') : ''), $action)->where($where);
                     $route[] = $router->get($uri . '/{pageQuery?}' . config('setting.extension'), $action)->where('pageQuery', $pageKeyword . '[0-9]+');
                 });
 
