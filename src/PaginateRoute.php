@@ -330,7 +330,7 @@ class PaginateRoute
 
         // If the first page's URL is requested and $full is set to false, there's nothing to be added.
         if ($page === 1 && !$full) {
-            return $url . config('setting.extension');
+            return $url;
         }
 
         return $url . "/{$this->pageKeyword}{$page}" . config('setting.extension');
