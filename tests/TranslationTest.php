@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\PaginateRoute\Test;
+namespace HungNM\PaginateRoute\Test;
 
 class TranslationTest extends TestCase
 {

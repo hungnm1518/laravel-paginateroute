@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\PaginateRoute;
+namespace HungNM\PaginateRoute;
 
 use Illuminate\Routing\Router;
 use Illuminate\Translation\Translator;
@@ -347,7 +347,7 @@ class PaginateRoute
         $router->macro('paginate', function ($uri, $action, $where) use ($pageKeyword, $router) {
             $route = null;
             $router->group(
-                ['middleware' => 'Spatie\PaginateRoute\SetPageMiddleware'],
+                ['middleware' => 'HungNM\PaginateRoute\SetPageMiddleware'],
                 function () use ($pageKeyword, $router, $uri, $action, $where, &$route) {
                     $route[] = $router->get($uri . (($uri !== '/') ? config('setting.extension') : ''), $action)->where($where);
                     $route[] = $router->get($uri . '/{pageQuery?}' . config('setting.extension'), $action)->where('pageQuery', $pageKeyword . '[0-9]+');

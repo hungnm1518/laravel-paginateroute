@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\PaginateRoute;
+namespace HungNM\PaginateRoute;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\PaginateRoute;
+namespace HungNM\PaginateRoute;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +24,6 @@ class PaginateRouteServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('paginateroute', 'Spatie\PaginateRoute\PaginateRoute');
+        $this->app->singleton('paginateroute', 'HungNM\PaginateRoute\PaginateRoute');
     }
 }

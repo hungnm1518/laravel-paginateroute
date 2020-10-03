@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\PaginateRoute;
+namespace HungNM\PaginateRoute;
 
 use Route;
 use Closure;

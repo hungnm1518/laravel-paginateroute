@@ -9,7 +9,7 @@
 
 This package adds the `paginate` route method to support pagination via custom routes instead of query strings. This also allows for easily translatable pagination routes ex. `/news/page/2`, `/nieuws/pagina/2`.
 
-Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+HungNM is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 **Note:** If you're upgrading to 2.0, check out the [upgrade guide](#upgrading) below.
 
@@ -17,7 +17,7 @@ Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all
 
 You're free to use this package (it's [MIT-licensed](LICENSE.md)), but if it makes it to your production environment you are required to send us a postcard from your hometown, mentioning which of our package(s) you are using.
 
-Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
+Our address is: HungNM, Samberstraat 69D, 2060 Antwerp, Belgium.
 
 The best postcards will get published on the open source page on our website.
 
@@ -36,12 +36,12 @@ First register the service provider and facade in your application.
 
 'providers' => [
     ...
-    'Spatie\PaginateRoute\PaginateRouteServiceProvider',
+    'HungNM\PaginateRoute\PaginateRouteServiceProvider',
 ];
 
 'aliases' => [
     ...
-    'PaginateRoute' => 'Spatie\PaginateRoute\PaginateRouteFacade',
+    'PaginateRoute' => 'HungNM\PaginateRoute\PaginateRouteFacade',
 ];
 ```
 
@@ -88,7 +88,7 @@ public function index()
 If you want to customize or add translations for the "page" url segment, you can publish the language files.
 
 ``` bash
-$ php artisan vendor:publish --provider="Spatie\PaginateRoute\PaginateRouteServiceProvider"
+$ php artisan vendor:publish --provider="HungNM\PaginateRoute\PaginateRouteServiceProvider"
 ```
 
 ### Generating Url's
@@ -261,8 +261,8 @@ If you discover any security related issues, please email freek@spatie.be instea
 - [Sebastian De Deyne](https://github.com/sebastiandedeyne)
 - [All Contributors](../../contributors)
 
-## About Spatie
-Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+## About HungNM
+HungNM is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 ## License
 

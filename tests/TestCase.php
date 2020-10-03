@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\PaginateRoute\Test;
+namespace HungNM\PaginateRoute\Test;
 
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -36,7 +36,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            'Spatie\PaginateRoute\PaginateRouteServiceProvider',
+            'HungNM\PaginateRoute\PaginateRouteServiceProvider',
         ];
     }
 
