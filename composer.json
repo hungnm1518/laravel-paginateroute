@@ -2,19 +2,18 @@
     "name": "hungnm1518/laravel-paginateroute",
     "description": "Laravel outer extension to easily use laravel's paginator without the query string",
     "keywords": [
-        "spatie",
         "laravel-paginateroute",
         "laravel",
         "pagination",
         "routing"
     ],
-    "homepage": "https://github.com/spatie/laravel-paginateroute",
+    "homepage": "https://github.com/hungnm1518/laravel-paginateroute",
     "license": "MIT",
     "authors": [
         {
-            "name": "Sebastian De Deyne",
-            "email": "sebastian@spatie.be",
-            "homepage": "https://spatie.be",
+            "name": "HungNM",
+            "email": "hungnm144@gmail.com",
+            "homepage": "https://github.com/hungnm1518/",
             "role": "Developer"
         }
     ],
@@ -30,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\PaginateRoute\\": "src"
+            "HungNM\\PaginateRoute\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\PaginateRoute\\Test\\": "tests"
+            "HungNM\\PaginateRoute\\Test\\": "tests"
         }
     },
     "extra": {
@@ -44,10 +43,10 @@
         },
         "laravel": {
             "providers": [
-                "Spatie\\PaginateRoute\\PaginateRouteServiceProvider"
+                "HungNM\\PaginateRoute\\PaginateRouteServiceProvider"
             ],
             "aliases": {
-                "PaginateRoute": "Spatie\\PaginateRoute\\PaginateRouteFacade"
+                "PaginateRoute": "HungNM\\PaginateRoute\\PaginateRouteFacade"
             }
         }
     },
